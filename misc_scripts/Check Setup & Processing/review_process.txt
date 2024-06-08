@@ -1,0 +1,29 @@
+cd /users/*Personal Tweets Directory*
+
+python3
+
+from sqlalchemy import Column, Integer, MetaData, Table, create_engine
+
+from sqlalchemy.orm import mapper, sessionmaker, Session
+
+warnings.filterwarnings("ignore")
+
+import alembic
+
+import pandas as pd
+
+cnx = create_engine('sqlite:///data/processed/clean_c.db').connect()
+
+tweets = pd.read_sql_table('tweets', cnx )
+
+tweetsMedia = pd.read_sql_table('tweets-media', cnx)
+
+tweetsContext = pd.read_sql_table('tweets-context', cnx )
+
+cnx.close()
+
+tweets
+
+tweetsMedia
+
+tweetsContext

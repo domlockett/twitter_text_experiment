@@ -1,0 +1,9 @@
+﻿Links to Larger Files in Google Drive:
+* Training data (train.csv): https://drive.google.com/file/d/1TUd3yrKzpXz8Jbrz92YNCVTkJ_OuroSb/view?usp=sharing
+   * Used in /training/main.py
+* Fine-tuned DistilBERT model: https://drive.google.com/drive/folders/1IZP_Ypp5MsRncNcSFlgiKst7j58sbr48?usp=sharing
+   * Trained using the Hugging Face Trainer API
+* Fine-tuned DistilBERT model (pt): https://drive.google.com/drive/folders/1H-8dazMVjHXoGaZWOvasxxy9GK-uaUuj?usp=sharing
+   * Trained using pure PyTorch, run on GPU
+* Sample Model Archive: https://drive.google.com/drive/folders/1q6789x_FQ_whJC_T569Q7_mw4QJEUHCs?usp=sharing
+   * Trained on smaller samples of train.csv

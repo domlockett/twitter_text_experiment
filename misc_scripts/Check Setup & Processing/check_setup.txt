@@ -1,0 +1,30 @@
+cd C:\Users\dl0ck\OneDrive\Summer 2021\TwitterCarlson
+
+python
+
+from sqlalchemy import Column, Integer, MetaData, Table, create_engine
+
+warnings.filterwarnings("ignore")
+
+import pandas as pd
+
+cnx = create_engine('sqlite:///data/processed/test.db').connect()
+
+tweets = pd.read_sql_table('tweets', cnx )
+
+tweetsMedia = pd.read_sql_table('tweets-media', cnx)
+
+tweetsContext = pd.read_sql_table('tweets-context', cnx )
+
+cnx.close()
+
+tweets.columns.tolist()[13] =='unique_id'
+
+tweetsMedia.columns.tolist()[5]=='unique_id'
+
+tweetsContext.columns.tolist()[5] == 'unique_id'
+
+create_engine('sqlite:///data/sql/tweet.db').table_names()==['tweetIDS', 'tweetconIDS', 'tweetmedIDS', 'tweets', 'tweets-context', 'tweets-media']
+
+
+cmd \k

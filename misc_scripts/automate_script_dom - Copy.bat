@@ -1,0 +1,4 @@
+SET BEARER_TOKEN=AAAAAAAAAAAAAAAAAAAAALXBOAEAAAAAs0v0KN2YhlsWxI7GHz76KH7y%%2Bhg%%3DCCBzPzaYCBGUhiAmO9B78Mhvxx6vEpbYPoSOORYVw6lk86R9ge
+cd C:\Users\dl0ck\Box Sync\TwitterConversations
+python scrape-newstweets-dom1.py
+cmd /k
