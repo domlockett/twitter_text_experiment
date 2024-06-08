@@ -55,4 +55,4 @@ The executables in the project automate the entire process, from data scraping t
 
 ## Acknowledgments
 
-This project is a collaborative effort involving significant contributions from various academics. The presented files are a copy of the project containing my contributions and are not original or source project files. Data has been excluded from this repository for privacy purposes. The project was created for the Washington University in Saint Louis Political Science Department. 
+This project is a collaborative effort involving significant contributions from various scholars. The presented files provide a copy of the project containing my contributions and are not original or source project files. Data has been excluded from this repository for privacy purposes. The project was created for the Washington University in Saint Louis Political Science Department. 
