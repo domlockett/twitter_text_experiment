@@ -5,7 +5,7 @@ The project aimed to collect tweets from 30 news organizations over the period 2
 
 ## Methods Employed
 
-### Data Collection
+### - Data Collection
 
 #### Scrape-newscomments-sql.py
 
@@ -21,7 +21,7 @@ The `scrape-newscomments-sql.py` script is responsible for collecting tweets fro
 - **Network Errors:** It catches network-related exceptions and retries the connection a predefined number of times.
 - **Data Validation:** Before inserting data into the SQL database, it validates the tweet content to ensure it conforms to the expected format, preventing SQL injection and other data integrity issues.
 
-### Data Processing
+### - Data Processing
 
 #### Processing Tweets and Comments
 
@@ -50,7 +50,7 @@ The `processing_tweets_comments` module involves several steps to clean and tran
 
 This detailed approach ensures comprehensive data collection, robust processing, and accurate predictions, facilitating insightful analysis of Twitter conversations.
 
-### Automation via Executables
+### - Automation via Executables
 The executables in the project automate the entire process, from data scraping to final analysis. These scripts are scheduled to run at specified intervals, ensuring that the data collection and analysis are up-to-date without manual intervention.
 
 ## Acknowledgments
