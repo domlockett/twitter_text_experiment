@@ -44,15 +44,10 @@ The `processing_tweets_comments` module involves several steps to clean and tran
 - **Algorithm Application:** Sentiment analysis algorithms are applied to determine the sentiment of each tweet. Libraries like TextBlob or Vader are used for this purpose.
 - **Storing Results:** The sentiment scores are added to the processed data and saved for further analysis.
 
-**Prediction Template for PartyPredictions:**
+**Prediction Template for `PartyPredictions-main/predictions.py`:**
 - **Machine Learning Models:** Various machine learning models, such as logistic regression, SVM, and neural networks, are used to predict party affiliations based on tweet content.
 - **Training and Validation:** Models are trained using labeled datasets and validated to ensure accuracy. The prediction results are stored for subsequent analysis and reporting.
 
-This detailed approach ensures comprehensive data collection, robust processing, and accurate predictions, facilitating insightful analysis of Twitter conversations.
-
-### - Automation via Executables
-The executables in the project automate the entire process, from data scraping to final analysis. These scripts are scheduled to run at specified intervals, ensuring that the data collection and analysis are up-to-date without manual intervention.
-
 ## Acknowledgments
 
-This project is a collaborative effort involving significant contributions from various scholars. The presented files provide a copy of the project containing my contributions and are not original or source project files. Data has been excluded from this repository for privacy purposes. The project was created for the Washington University in Saint Louis Political Science Department. 
+This project is a collaborative effort involving significant contributions from various scholars. The provided files and scripts reflect the extensive work done to explore political communication on social media. The project was created for academic purposes and data has been excluded from the copy of the project in this to ensure privacy and confidentiality. The project was created for the Washington University in Saint Louis Political Science Department.
