@@ -50,4 +50,4 @@ The `processing_tweets_comments` module involves several steps to clean and tran
 
 ## Acknowledgments
 
-This project is a collaborative effort involving significant contributions from various scholars. The provided files and scripts reflect the extensive work done to explore political communication on social media. The project was created for academic purposes and data has been excluded from the copy of the project in this to ensure privacy and confidentiality. The project was created for the Washington University in Saint Louis Political Science Department.
+This project is a collaborative effort involving significant contributions from various scholars. The provided files and scripts reflect the extensive work done to explore political communication on social media. The project was created for academic purposes and data has been excluded from the copy of the project to ensure privacy and confidentiality. The project was created for the Washington University in Saint Louis Political Science Department.
