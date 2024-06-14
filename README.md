@@ -58,7 +58,7 @@ The [`scrape-newscomments-sql.py`](https://github.com/domlockett/twitter_text_ex
 
 ### Processing Tweets
 **Description:**
-[`data_management/processing_tweets_comments.py](https://github.com/domlockett/twitter_text_experiment/blob/main/processing_tweets_orig.py) processes the raw tweet data to prepare it for analysis, including text cleaning, tokenization, and feature extraction.
+[`data_management/processing_tweets_comments.py'](https://github.com/domlockett/twitter_text_experiment/blob/main/processing_tweets_orig.py) processes the raw tweet data to prepare it for analysis, including text cleaning, tokenization, and feature extraction.
 
 **Data Loading and Saving:**
 - **Loading Data:** The script reads raw tweet data from the SQL database. It utilizes efficient SQL queries to load data in chunks, handling large datasets without overwhelming memory.
@@ -84,7 +84,7 @@ The [`scrape-newscomments-sql.py`](https://github.com/domlockett/twitter_text_ex
 
 ### Beta Analysis
 **Descriptions:**
-The [`data_management/beta_analyses.r](https://github.com/domlockett/twitter_text_experiment/blob/main/beta_analysis.py) file performs exploratory data analysis and initial hypothesis testing on the processed tweet data.
+The [`data_management/beta_analyses.r'](https://github.com/domlockett/twitter_text_experiment/blob/main/beta_analysis.py) file performs exploratory data analysis and initial hypothesis testing on the processed tweet data.
 
 **Content and Structure:**
 
