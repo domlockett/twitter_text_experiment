@@ -86,13 +86,6 @@ The [`scrape-newscomments-sql.py`](https://github.com/domlockett/twitter_text_ex
 **Descriptions:**
 The [`data_management/beta_analyses.r](https://github.com/domlockett/twitter_text_experiment/blob/main/beta_analysis.py) file performs exploratory data analysis and initial hypothesis testing on the processed tweet data.
 
-I apologize for the misunderstanding earlier. Let's correctly document the `beta_analysis.py` file by focusing on its structure and functionalities, ensuring clarity and accuracy without mentioning any try-except blocks as they are not present.
-
-### [Beta Analysis](https://github.com/domlockett/twitter_text_experiment/blob/main/beta_analysis.py)
-
-**Purpose:**
-Performs exploratory data analysis and initial hypothesis testing on the processed tweet data.
-
 **Content and Structure:**
 
 1. **Data Loading:**
@@ -118,78 +111,6 @@ Performs exploratory data analysis and initial hypothesis testing on the process
 6. **Visualization:**
    - **Plotting:** Utilizes `matplotlib` and `seaborn` for creating distribution plots of partisan bias in tweets and replies, highlighting differences in bias.
 
-**Key Components:**
-
-- **Model Initialization:** Loads the pre-trained DistilBERT model for sentiment analysis.
-  ```python
-  checkpoint = 'path/to/fine_tuned_distilbert'
-  model = AutoModelForSequenceClassification.from_pretrained(checkpoint)
-  tokenizer = AutoTokenizer.from_pretrained('distilbert-base-uncased')
-  pipe = pipeline('sentiment-analysis', model=model, tokenizer=tokenizer, truncation=True)
-  ```
-
-- **Data Loading and Cleaning:**
-  ```python
-  df = pd.read_sql(sql="SELECT * FROM 'tweets-o'", con=cnx)
-  df['question'] = df.text_o.str.encode('latin1', 'ignore')
-  ```
-
-- **Prediction Loop:**
-  ```python
-  for q in df['question']:
-      q = str(q)
-      pred_dict = pipe(q)[0]
-      predictions_o.append(pred_dict['label'])
-      scores_o.append(pred_dict['score'])
-  ```
-
-- **Descriptive Statistics:**
-  ```python
-  reply_avg = cnx.execute("SELECT AVG(totalwords) FROM 'tweets'").fetchone()[0]
-  orig_avg = cnx.execute("SELECT AVG(totalwords_o) FROM 'tweets-o'").fetchone()[0]
-  ```
-
-- **Action Words Analysis:**
-  ```python
-  reply_all = pd.read_sql("SELECT * FROM 'tweets' WHERE text LIKE '% keyword %'", con=cnx)
-  ```
-
-- **Visualization:**
-  ```python
-  fig, ax = plt.subplots(figsize=(12, 4))
-  sb.distplot(jan_o.score_o, hist=False, kde_kws={'linestyle': '--'}, label='Parent Tweet', color='black')
-  sb.distplot(jan.score, hist=False, label='Reply', color='grey')
-  plt.title("Distribution of partisan bias in tweets and replies")
-  ax.set_xlabel('Partisan bias prediction')
-  plt.legend()
-  plt.show()
-  ```
 
 ## Acknowledgement
 This project is a collaborative effort involving significant contributions from various scholars. The provided files and scripts reflect the extensive work done to understand and address the impacts of social media on public discourse. Created for academic purposes, any anonymized data has been removed to ensure privacy and confidentiality. Developed for Washington University in Saint Louis Political Science Department, as well as Exeter and Princeton University. Special thanks to all authors for agreeing to publicize my contributions to the project.
-
-## Acknowledgement
-This project is a collaborative effort involving significant contributions from various scholars. The provided files and scripts reflect the extensive work done to understand and address the collect tweets and replys from news outlets. Created for academic purposes, any anonymized data has been removed to ensure privacy and confidentiality. This project was developed for Washington University in Saint Louis Political Science Department. Special thanks to all authors for agreeing to publicize my contributions to the project.
-
-
-# Twitter text experiment
-
-## Overall Aims of the Project
-The project aimed to collect tweets from 30 news organizations over the period 2017-2022. The goal was to analyze the data for patterns in communication, sentiment, and party predictions using the collected data.
-
-## Methods Employed
-
-### - Data Collection
-
-#### Scrape-newscomments-sql.py
-
-### - Data Processing
-
-#### Processing Tweets and Comments
-
-The `processing_tweets_comments` module involves several steps to clean and transform the collected data for analysis.
-
-
-## Acknowledgments
-
-This project is a collaborative effort involving significant contributions from various scholars. The provided files and scripts reflect the extensive work done to explore political communication on social media. The project was created for academic purposes and data has been excluded from the copy of the project to ensure privacy and confidentiality. The project was created for the Washington University in Saint Louis Political Science Department.
