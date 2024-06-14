@@ -40,9 +40,6 @@ My role in this project involved managing data from the design and collection ph
 ### Scrape News Comments SQL
 
 **Description:**
-This script scrapes tweets and comments from specified news outlets using the Twitter API and stores the data in an SQL database.
-
-
 The [`scrape-newscomments-sql.py`](https://github.com/domlockett/twitter_text_experiment/blob/main/scrape-newscomments-sql.py) script is responsible for collecting tweets from specified news organizations. The script starts by setting up a connection to the Twitter API using authentication keys. The target news organizations and date ranges are defined within the script. 
 
 **Content and Structure:**
@@ -73,13 +70,6 @@ The [`scrape-newscomments-sql.py`](https://github.com/domlockett/twitter_text_ex
 - **Logging:** The script logs each step of the processing, including the number of tweets processed, time taken for each operation, and any errors encountered. This helps in identifying bottlenecks and errors.
 - **Error Handling:** Specific try-except blocks are implemented to catch and handle exceptions during processing. Errors are logged, and problematic data entries are either corrected or flagged for manual review.
 
-**Sentiment Analysis:**
-- **Algorithm Application:** Sentiment analysis algorithms are applied to determine the sentiment of each tweet. Libraries like TextBlob or Vader are used for this purpose.
-- **Storing Results:** The sentiment scores are added to the processed data and saved for further analysis.
-
-**Prediction Template for `PartyPredictions-main/predictions.py`:**
-- **Machine Learning Models:** Various machine learning models, such as logistic regression, SVM, and neural networks, are used to predict party affiliations based on tweet content.
-- **Training and Validation:** Models are trained using labeled datasets and validated to ensure accuracy. The prediction results are stored for subsequent analysis and reporting.
 
 
 ### Beta Analysis
