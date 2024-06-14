@@ -45,9 +45,9 @@ BigIntegerType = BigInteger()
 BigIntegerType = BigIntegerType.with_variant(sqlite.INTEGER(), 'sqlite')
 from sqlalchemy import create_engine, inspect
 from sqlalchemy_utils.functions import database_exists, create_database
-cnx = create_engine('sqlite:///C:/Users/Dl0ck/OneDrive/Fall 2021/TwitterCarlson/data_22/processed/jan_clean.db').connect()
+cnx = create_engine('sqlite:///C:/Users/Path/to/Data/data_22/processed/jan_clean.db').connect()
 
-conn = create_engine('sqlite:///C:/Users/Dl0ck/OneDrive/Fall 2021/TwitterCarlson/data_22/joan_dirty.db').connect()
+conn = create_engine('sqlite:///C:/Users/Path/to/Data/data_22/joan_dirty.db').connect()
 gett =inspect(cnx)
 gett.get_table_names()
 pd.read_sql(sql =" SELECT * FROM 'tweets-o'", con = conn)

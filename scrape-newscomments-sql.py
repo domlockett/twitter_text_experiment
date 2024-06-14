@@ -38,22 +38,6 @@ from sqlalchemy import create_engine
 from sqlalchemy.types import String
 import sqlalchemy
 
-# To download file contents from online Box
-# https://github.com/box/box-python-sdk
-# pip install "boxsdk[jwt]"
-
-# TODO: Finish this.
-# from boxsdk import JWTAuth
-
-# auth = JWTAuth(
-#     client_id='m47uczrkqg0o5kw8zati8hocoas7z1o5',
-#     client_secret='q1NCE2un43xRRlpZYFRFhSiF28uQwOvc',
-#     enterprise_id='280321',
-#     jwt_key_id='gakrsj7h',
-#     rsa_private_key_file_sys_path='CERT.PEM',
-#     rsa_private_key_passphrase='10e7369765f8cc53e92093db10d598d3',
-#     store_tokens=your_store_tokens_callback_method,
-# )
 
 # access_token = auth.authenticate_instance()
 

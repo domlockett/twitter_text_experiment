@@ -37,9 +37,6 @@ def auth():
     return os.environ.get("BEARER_TOKEN")
 
 # Function to create header
-def create_headers(bearer_token):
-    headers = {"Authorization":"Bearer {}".format('AAAAAAAAAAAAAAAAAAAAALXBOAEAAAAAs0v0KN2YhlsWxI7GHz76KH7y%%2Bhg%%3DCCBzPzaYCBGUhiAmO9B78Mhvxx6vEpbYPoSOORYVw6lk86R9ge')}
-    return headers
 
 def connect_to_endpoint_noparams(url, headers):
     response = requests.request("GET", url, headers=headers)

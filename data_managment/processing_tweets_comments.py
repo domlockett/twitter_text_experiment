@@ -112,7 +112,7 @@ def tweets_REP(chunk):
 		#tweets['text'] = [" ".join(str(TextBlob(word).correct()) for word in x.split()) for x in tweets.text.tolist()]#spellcheck --- takes too long
   
 		
-		clean = create_engine('sqlite:///C:/Users/Dl0ck/OneDrive/Fall 2021/TwitterCarlson/data_22/processed/jan_clean.db').connect()
+		clean = create_engine('sqlite:///C:/Users/Path/to/Data/data_22/processed/jan_clean.db').connect()
 		tweets.to_sql("jan", clean, if_exists='append', index=False)
 		clean.close()
 		
@@ -146,7 +146,7 @@ def tweets_MED(chunk2):
 		tweetmedIDS = tweetmedIDS.rename('tweetmedIDS')
 
 
-		clean = create_engine('sqlite:///C:/Users/Dl0ck/OneDrive/Fall 2021/TwitterCarlson/data_22/processed/jan_clean.db').connect()
+		clean = create_engine('sqlite:///C:/Users/Path/to/Data/data_22/processed/jan_clean.db').connect()
 		tweetsMedia.to_sql("jan-media",clean, if_exists='append', index=False)
 		clean.close()
 
@@ -171,7 +171,7 @@ def tweets_CON(chunk3):
 		tweetconIDS = pd.Series(tweetsContext.unique_id)
 		tweetconIDS = tweetconIDS.rename('tweetconIDS')
 
-		clean = create_engine('sqlite:///C:/Users/Dl0ck/OneDrive/Fall 2021/TwitterCarlson/data_22/processed/jan_clean.db').connect()
+		clean = create_engine('sqlite:///C:/Users/Path/to/Data/data_22/processed/jan_clean.db').connect()
 		tweetsContext.to_sql("jan-context", clean, if_exists='append', index=False)
 		clean.close()
 
@@ -186,24 +186,24 @@ def tweets_CON(chunk3):
 	return tweetconIDS
 
 def main():#run processing functions here
-	logging.basicConfig(filename='C:/Users/Dl0ck/OneDrive/Fall 2021/TwitterCarlson/data_22/processed/logs/' + 'COMM' +datetime.today().strftime("%m-%d-%Y-%M-%H-%S") + '.log',level=logging.INFO, format='%(message)s', force=True)
+	logging.basicConfig(filename='C:/Users/Path/to/Data/data_22/processed/logs/' + 'COMM' +datetime.today().strftime("%m-%d-%Y-%M-%H-%S") + '.log',level=logging.INFO, format='%(message)s', force=True)
 	logging.info('Start time: %s', datetime.now());   
 	
 	chunkTW= 10000
 	chunkTWM = 10000
 	chunkTWC = 10000
-	#cnx = create_engine('sqlite:///C:/Users/Dl0ck/OneDrive/Fall 2021/TwitterCarlson/data_22/ER_2-1-22/tweet_er-1.db').connect()--done 2/22/22 2pm
-	cnx = create_engine('sqlite:///C:/Users/Dl0ck/OneDrive/Fall 2021/TwitterCarlson/data_22/jan_dirty.db').connect()
-	#cnx = create_engine('sqlite:///C:/Users/Dl0ck/OneDrive/Fall 2021/TwitterCarlson/data_22/ER_2-1-22/tweet_er-3.db').connect()---label ER2 meant to be er3
-#	cnx = create_engine('sqlite:///C:/Users/Dl0ck/OneDrive/Fall 2021/TwitterCarlson/data_22/ER_2-1-22/tweet_er-4.db').connect()---done 2.23.22 12pm
-	#cnx = create_engine('sqlite:///C:/Users/Dl0ck/OneDrive/Fall 2021/TwitterCarlson/data_22/ER_2-1-22/tweet_er-5.db').connect()--done 2.24.22 12am
+	#cnx = create_engine('sqlite:///C:/Users/Path/to/Data/data_22/ER_2-1-22/tweet_er-1.db').connect()--done 2/22/22 2pm
+	cnx = create_engine('sqlite:///C:/Users/Path/to/Data/data_22/jan_dirty.db').connect()
+	#cnx = create_engine('sqlite:///C:/Users/Path/to/Data/data_22/ER_2-1-22/tweet_er-3.db').connect()---label ER2 meant to be er3
+#	cnx = create_engine('sqlite:///C:/Users/Path/to/Data/data_22/ER_2-1-22/tweet_er-4.db').connect()---done 2.23.22 12pm
+	#cnx = create_engine('sqlite:///C:/Users/Path/to/Data/data_22/ER_2-1-22/tweet_er-5.db').connect()--done 2.24.22 12am
 	
-	#cnx = create_engine('sqlite:///C:/Users/Dl0ck/OneDrive/Fall 2021/TwitterCarlson/data_22/ER_2-1-22/tweet_er-6.db').connect()--done 2.25.22
-	#cnx = create_engine('sqlite:///C:/Users/Dl0ck/OneDrive/Fall 2021/TwitterCarlson/data_22/ER_2-1-22/tweet_er-7.db').connect()
+	#cnx = create_engine('sqlite:///C:/Users/Path/to/Data/data_22/ER_2-1-22/tweet_er-6.db').connect()--done 2.25.22
+	#cnx = create_engine('sqlite:///C:/Users/Path/to/Data/data_22/ER_2-1-22/tweet_er-7.db').connect()
 
-	#cnx = create_engine('sqlite:///C:/Users/Dl0ck/OneDrive/Fall 2021/TwitterCarlson/data_22/TC_2-1-22/tweet_tc/tweet_tc.db').connect()-done 2.26.22 1130pm ER7 meant to be tc
+	#cnx = create_engine('sqlite:///C:/Users/Path/to/Data/data_22/TC_2-1-22/tweet_tc/tweet_tc.db').connect()-done 2.26.22 1130pm ER7 meant to be tc
 
-	#cnx = create_engine('sqlite:///C:/Users/Dl0ck/OneDrive/Fall 2021/TwitterCarlson/data/sql/copies/tweet_dl.db').connect()-done 2.27.22 1130pm source_tweet meant to be dl
+	#cnx = create_engine('sqlite:///C:/Users/Path/to/Data/data/sql/copies/tweet_dl.db').connect()-done 2.27.22 1130pm source_tweet meant to be dl
 
 	try:
 		for chunk in pd.read_sql(sql =" SELECT * FROM tweets WHERE unique_id not in (SELECT tweetIDS FROM tweetIDS)", con = cnx):

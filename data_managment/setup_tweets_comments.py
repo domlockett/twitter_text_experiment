@@ -44,18 +44,18 @@ BigIntegerType = BigIntegerType.with_variant(sqlite.INTEGER(), 'sqlite')
 
 import alembic
 def unique_id():
-#	#conn = create_engine('sqlite:///C:/Users/Dl0ck/OneDrive/Fall 2021/TwitterCarlson/data_22/ER_2-1-22/tweet_er-1.db').connect()--done 2/22/22 2pm
-	#conn = create_engine('sqlite:///C:/Users/Dl0ck/OneDrive/Fall 2021/TwitterCarlson/data_22/ER_2-1-22//tweet_er2.db').connect()
-	#conn = create_engine('sqlite:///C:/Users/Dl0ck/OneDrive/Fall 2021/TwitterCarlson/data_22/ER_2-1-22/tweet_er-3.db').connect()---label ER2 meant to be er3
-#	conn = create_engine('sqlite:///C:/Users/Dl0ck/OneDrive/Fall 2021/TwitterCarlson/data_22/ER_2-1-22/tweet_er-4.db').connect()---done 2.23.22 12pm
-	#conn = create_engine('sqlite:///C:/Users/Dl0ck/OneDrive/Fall 2021/TwitterCarlson/data_22/ER_2-1-22/tweet_er-5.db').connect()--done 2.24.22 12am
-	#conn = create_engine('sqlite:///C:/Users/Dl0ck/OneDrive/Fall 2021/TwitterCarlson/data_22/ER_2-1-22/tweet_er-6.db').connect()--done 2.24.22 #for reference er 7 is 3.5 gb before adding ids
-	#conn = create_engine('sqlite:///C:/Users/Dl0ck/OneDrive/Fall 2021/TwitterCarlson/data_22/ER_2-1-22/tweet_er-7.db').connect()
-	#conn = create_engine('sqlite:///C:/Users/Dl0ck/OneDrive/Fall 2021/TwitterCarlson/data_22/TC_2-1-22/tweet_tc/tweet_tc.db').connect()--done 2.26.22 1130pm
+#	#conn = create_engine('sqlite:///C:/Users/Path/to/Data/data_22/ER_2-1-22/tweet_er-1.db').connect()--done 2/22/22 2pm
+	#conn = create_engine('sqlite:///C:/Users/Path/to/Data/data_22/ER_2-1-22//tweet_er2.db').connect()
+	#conn = create_engine('sqlite:///C:/Users/Path/to/Data/data_22/ER_2-1-22/tweet_er-3.db').connect()---label ER2 meant to be er3
+#	conn = create_engine('sqlite:///C:/Users/Path/to/Data/data_22/ER_2-1-22/tweet_er-4.db').connect()---done 2.23.22 12pm
+	#conn = create_engine('sqlite:///C:/Users/Path/to/Data/data_22/ER_2-1-22/tweet_er-5.db').connect()--done 2.24.22 12am
+	#conn = create_engine('sqlite:///C:/Users/Path/to/Data/data_22/ER_2-1-22/tweet_er-6.db').connect()--done 2.24.22 #for reference er 7 is 3.5 gb before adding ids
+	#conn = create_engine('sqlite:///C:/Users/Path/to/Data/data_22/ER_2-1-22/tweet_er-7.db').connect()
+	#conn = create_engine('sqlite:///C:/Users/Path/to/Data/data_22/TC_2-1-22/tweet_tc/tweet_tc.db').connect()--done 2.26.22 1130pm
 
 
-	#conn = create_engine('sqlite:///C:/Users/Dl0ck/OneDrive/Fall 2021/TwitterCarlson/data/sql/copies/tweet_dl.db').connect()--done 2.26.22 1130pm
-	conn = create_engine('sqlite:///C:/Users/Dl0ck/OneDrive/Fall 2021/TwitterCarlson/data_22/jan_dirty.db').connect()
+	#conn = create_engine('sqlite:///C:/Users/Path/to/Data/data/sql/copies/tweet_dl.db').connect()--done 2.26.22 1130pm
+	conn = create_engine('sqlite:///C:/Users/Path/to/Data/data_22/jan_dirty.db').connect()
 
 
 	ctx = alembic.migration.MigrationContext.configure(conn)

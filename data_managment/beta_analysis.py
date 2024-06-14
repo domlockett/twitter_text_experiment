@@ -50,8 +50,8 @@ import seaborn as sb
 BigIntegerType = BigInteger()
 BigIntegerType = BigIntegerType.with_variant(sqlite.INTEGER(), 'sqlite')
 from sqlalchemy import create_engine, inspect
-cnx = create_engine('sqlite:///C:/Users/Dl0ck/OneDrive/Fall 2021/TwitterCarlson/data_22/processed/clean_all.db').connect()
-conn = create_engine('sqlite:///C:/Users/Dl0ck/OneDrive/Fall 2021/TwitterCarlson/data_22/processed/jan_clean.db').connect()
+cnx = create_engine('sqlite:///C:/Users/Path/to/Data/data_22/processed/clean_all.db').connect()
+conn = create_engine('sqlite:///C:/Users/Path/to/Data/data_22/processed/jan_clean.db').connect()
 
 
 #DESCRIBE dataset
@@ -157,7 +157,7 @@ exclude =reply_all[~reply_all.conversation_id.isin(exclude)]
 
 ##len(orig_all)/len(comp_o) #.05
 
-pd.DataFrame(len(reply_all)/len(comp), columns=['mobilize_replies']).to_csv('C:/Users/Dl0ck/OneDrive/Fall 2021/TwitterCarlson/data_22/reply_mobilize_all')
+pd.DataFrame(len(reply_all)/len(comp), columns=['mobilize_replies']).to_csv('C:/Users/Path/to/Data/data_22/reply_mobilize_all')
 
 
 #len(origj)/len(comp_oj) #12%
@@ -170,7 +170,7 @@ pd.DataFrame(len(reply_all)/len(comp), columns=['mobilize_replies']).to_csv('C:/
 
 
 
-checkpoint = 'C:/Users/dl0ck/OneDrive/Fall 2021/TwitterCarlson/PartyPredictions-main/models/fine_tuned_distilbert'  # Path to model goes here.
+checkpoint = 'C:/Users/Path/to/Data/PartyPredictions-main/models/fine_tuned_distilbert'  # Path to model goes here.
 model = AutoModelForSequenceClassification.from_pretrained(checkpoint)
 tokenizer = AutoTokenizer.from_pretrained('distilbert-base-uncased')  # Tokenizer can be adjusted if needed.
 pipe = pipeline('sentiment-analysis', model=model, tokenizer=tokenizer, truncation=True)
@@ -215,14 +215,14 @@ for q in df['question']:  # Replace 'question' with the proper column name.
 
 elapsed = (time.process_time() - start)
 elapsed/60
-pd.DataFrame(predictions_o, columns=['bias_pred']).to_csv('C:/Users/Dl0ck/OneDrive/Fall 2021/TwitterCarlson/data_22/orig_kauf_preds_all')
-pd.DataFrame(scores_o, columns=['bias_score']).to_csv('C:/Users/Dl0ck/OneDrive/Fall 2021/TwitterCarlson/data_22/orig_kauf_score_all')
-# pd.DataFrame(predictions_o, columns=['bias_pred']).to_csv('C:/Users/Dl0ck/OneDrive/Fall 2021/TwitterCarlson/data_22/orig_kauf_preds_jan')
-# pd.DataFrame(scores_o, columns=['bias_score']).to_csv('C:/Users/Dl0ck/OneDrive/Fall 2021/TwitterCarlson/data_22/orig_kauf_score_jan')
+pd.DataFrame(predictions_o, columns=['bias_pred']).to_csv('C:/Users/Path/to/Data/data_22/orig_kauf_preds_all')
+pd.DataFrame(scores_o, columns=['bias_score']).to_csv('C:/Users/Path/to/Data/data_22/orig_kauf_score_all')
+# pd.DataFrame(predictions_o, columns=['bias_pred']).to_csv('C:/Users/Path/to/Data/data_22/orig_kauf_preds_jan')
+# pd.DataFrame(scores_o, columns=['bias_score']).to_csv('C:/Users/Path/to/Data/data_22/orig_kauf_score_jan')
 
 jan_o = pd.read_sql(sql =" SELECT * FROM 'tweets-o'", con = cnx)
-tweets['score_o'] = pd.read_csv('C:/Users/Dl0ck/OneDrive/Fall 2021/TwitterCarlson/data_22/orig_kauf_score_all').bias_score
-tweets['pred_o'] = pd.read_csv('C:/Users/Dl0ck/OneDrive/Fall 2021/TwitterCarlson/data_22/orig_kauf_preds_all').bias_pred
+tweets['score_o'] = pd.read_csv('C:/Users/Path/to/Data/data_22/orig_kauf_score_all').bias_score
+tweets['pred_o'] = pd.read_csv('C:/Users/Path/to/Data/data_22/orig_kauf_preds_all').bias_pred
 
 tweets.score_o.max()
 tweets.score_o.min()
@@ -266,20 +266,20 @@ elapsed = (time.process_time() - start)
 elapsed/60
 
 
-pd.DataFrame(predictions, columns=['bias_score']).to_csv('C:/Users/Dl0ck/OneDrive/Fall 2021/TwitterCarlson/data_22/reply_kauf_preds_jan')
-pd.DataFrame(scores, columns=['bias_score']).to_csv('C:/Users/Dl0ck/OneDrive/Fall 2021/TwitterCarlson/data_22/reply_kauf_score_jan')
+pd.DataFrame(predictions, columns=['bias_score']).to_csv('C:/Users/Path/to/Data/data_22/reply_kauf_preds_jan')
+pd.DataFrame(scores, columns=['bias_score']).to_csv('C:/Users/Path/to/Data/data_22/reply_kauf_score_jan')
 
-conn = create_engine('sqlite:///C:/Users/Dl0ck/OneDrive/Fall 2021/TwitterCarlson/data_22/processed/jan_clean.db').connect()
+conn = create_engine('sqlite:///C:/Users/Path/to/Data/data_22/processed/jan_clean.db').connect()
 
 
 jan = pd.read_sql(sql =" SELECT * FROM 'jan'", con = conn)
 tweets = pd.read_sql(sql =" SELECT * FROM 'tweets'", con = cnx)
 
-jan['score'] = pd.read_csv('C:/Users/Dl0ck/OneDrive/Fall 2021/TwitterCarlson/data_22/reply_kauf_score_jan').bias_score
-tweets['score'] = pd.read_csv('C:/Users/Dl0ck/OneDrive/Fall 2021/TwitterCarlson/data_22/reply_kauf_score_all').bias_score
+jan['score'] = pd.read_csv('C:/Users/Path/to/Data/data_22/reply_kauf_score_jan').bias_score
+tweets['score'] = pd.read_csv('C:/Users/Path/to/Data/data_22/reply_kauf_score_all').bias_score
 
-jan['preds'] = pd.read_csv('C:/Users/Dl0ck/OneDrive/Fall 2021/TwitterCarlson/data_22/reply_kauf_preds_jan').bias_score
-all['preds'] = pd.read_csv('C:/Users/Dl0ck/OneDrive/Fall 2021/TwitterCarlson/data_22/reply_kauf_preds_all').bias_score
+jan['preds'] = pd.read_csv('C:/Users/Path/to/Data/data_22/reply_kauf_preds_jan').bias_score
+all['preds'] = pd.read_csv('C:/Users/Path/to/Data/data_22/reply_kauf_preds_all').bias_score
 
 
 jan.score.max()

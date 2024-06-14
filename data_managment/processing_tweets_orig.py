@@ -110,8 +110,8 @@ def tweets_REP(chunk):
 		#tweets['text'] = [" ".join(str(TextBlob(word).correct()) for word in x.split()) for x in tweets.text.tolist()]#spellcheck --- takes too long
 
 		tweets = tweets.add_suffix('_o')
-		#clean = create_engine('sqlite:///C:/Users/Dl0ck/OneDrive/Fall 2021/TwitterCarlson/data/processed/tweets/clean-jan6_orig.db').connect()
-		clean = create_engine('sqlite:///C:/Users/Dl0ck/OneDrive/Fall 2021/TwitterCarlson/data_22/processed/jan_clean.db').connect()
+		#clean = create_engine('sqlite:///C:/Users/Path/to/Data/data/processed/tweets/clean-jan6_orig.db').connect()
+		clean = create_engine('sqlite:///C:/Users/Path/to/Data/data_22/processed/jan_clean.db').connect()
 		tweets.to_sql("jan-o", clean, if_exists='append', index=False)
 		clean.close()
 		
@@ -144,8 +144,8 @@ def tweets_MED(chunk2):
 		tweetmedoIDS = pd.Series(tweetsMedia.unique_id_o)
 		tweetmedoIDS = tweetmedoIDS.rename('tweetmedoIDS')
 
-		#clean = create_engine('sqlite:///C:/Users/Dl0ck/OneDrive/Fall 2021/TwitterCarlson/data/processed/tweets/clean-jan6_orig.db').connect()
-		clean = create_engine('sqlite:///C:/Users/Dl0ck/OneDrive/Fall 2021/TwitterCarlson/data_22/processed/jan_clean.db').connect()
+		#clean = create_engine('sqlite:///C:/Users/Path/to/Data/data/processed/tweets/clean-jan6_orig.db').connect()
+		clean = create_engine('sqlite:///C:/Users/Path/to/Data/data_22/processed/jan_clean.db').connect()
 
 		tweetsMedia.to_sql("jan-media-o",clean, if_exists='append', index=False)
 		clean.close()
@@ -172,8 +172,8 @@ def tweets_CON(chunk3):
 		tweetconoIDS = pd.Series(tweetsContext.unique_id_o)
 		tweetconoIDS = tweetconoIDS.rename('tweetconoIDS')
 
-		#clean = create_engine('sqlite:///C:/Users/Dl0ck/OneDrive/Fall 2021/TwitterCarlson/data//processed/tweets/clean-jan6_orig.db').connect()
-		clean = create_engine('sqlite:///C:/Users/Dl0ck/OneDrive/Fall 2021/TwitterCarlson/data_22/processed/jan_clean.db').connect()
+		#clean = create_engine('sqlite:///C:/Users/Path/to/Data/data//processed/tweets/clean-jan6_orig.db').connect()
+		clean = create_engine('sqlite:///C:/Users/Path/to/Data/data_22/processed/jan_clean.db').connect()
 
 		tweetsContext.to_sql("jan-context-o", clean, if_exists='append', index=False)
 		clean.close()
@@ -189,14 +189,14 @@ def tweets_CON(chunk3):
 	return tweetconoIDS
  
 def main():#run processing functions here
-	logging.basicConfig(filename='C:/Users/Dl0ck/OneDrive/Fall 2021/TwitterCarlson/data_22/processed/logs/' + 'TWEET' +datetime.today().strftime("%m-%d-%Y-%H-%M-%S") + '.log',level=logging.INFO, format='%(message)s', force=True)
+	logging.basicConfig(filename='C:/Users/Path/to/Data/data_22/processed/logs/' + 'TWEET' +datetime.today().strftime("%m-%d-%Y-%H-%M-%S") + '.log',level=logging.INFO, format='%(message)s', force=True)
 	logging.info('Start time: %s', datetime.now())
 	
 	chunkTW= 10000
 	chunkTWM = 10000
 	chunkTWC = 10000
-	#cnx = create_engine('sqlite:///C:/Users/Dl0ck/OneDrive/Fall 2021/TwitterCarlson/data/sql/tweets/jan6_orig.db').connect()
-	cnx = create_engine('sqlite:///C:/Users/Dl0ck/OneDrive/Fall 2021/TwitterCarlson/data_22/jan_dirty.db').connect()
+	#cnx = create_engine('sqlite:///C:/Users/Path/to/Data/data/sql/tweets/jan6_orig.db').connect()
+	cnx = create_engine('sqlite:///C:/Users/Path/to/Data/data_22/jan_dirty.db').connect()
 
 	for chunk in pd.read_sql(sql =" SELECT * FROM 'tweets-o' WHERE unique_id not in (SELECT tweetoIDS FROM tweetoIDS)", con = cnx, chunksize = chunkTW):
 		a = tweets_REP(chunk)

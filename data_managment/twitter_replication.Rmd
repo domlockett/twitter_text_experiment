@@ -42,7 +42,7 @@ library(dplyr)
 library(DBI)
 
 #connect to the DATABASE BY feeding it the address 
-cnx <- dbConnect(RSQLite::SQLite(), 'C:/Users/dl0ck/OneDrive/Fall 2021/TwitterCarlson/data_22/processed/jan_clean.db') #all current
+cnx <- dbConnect(RSQLite::SQLite(), 'C:/Users/Path/to/Data/data_22/processed/jan_clean.db') #all current
 
 
 knitr::opts_chunk$set(echo = TRUE)

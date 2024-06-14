@@ -5,7 +5,7 @@ library(DBI)
 # Example code
 ##############################
 #wherever your data is stored
-projhome <- 'C:/Users/Dl0ck/OneDrive/Fall 2021/TwitterCarlson/data/processed/'
+projhome <- 'C:/Users/Path/to/Data/data/processed/'
 
 #connect to the DATABASE BY feeding it the address 
 original <- dbConnect(RSQLite::SQLite(), paste0(projhome,"tweets/clean-jan6_orig.db"))
@@ -38,9 +38,9 @@ dbDisconnect(comments)
 ##############################
 
 
-projhome <- 'C:/Users/Dl0ck/OneDrive/Fall 2021/TwitterCarlson/data_22/processed/'
-#projhome1 <- 'C:/Users/Dl0ck/OneDrive/Fall 2021/TwitterCarlson/data_22/ER_2-1-22/'
-#projhome2 <- 'C:/Users/Dl0ck/OneDrive/Fall 2021/TwitterCarlson/data/sql/tweets/'
+projhome <- 'C:/Users/Path/to/Data/data_22/processed/'
+#projhome1 <- 'C:/Users/Path/to/Data/data_22/ER_2-1-22/'
+#projhome2 <- 'C:/Users/Path/to/Data/data/sql/tweets/'
 
 t <- dbConnect(RSQLite::SQLite(), paste0(projhome,"convo_ids.db"))
 

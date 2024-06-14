@@ -44,7 +44,7 @@ BigIntegerType = BigIntegerType.with_variant(sqlite.INTEGER(), 'sqlite')
 
 import alembic
 def unique_id():
-	conn = create_engine('sqlite:///C:/Users/Dl0ck/OneDrive/Fall 2021/TwitterCarlson/data_22/jan_dirty.db').connect()
+	conn = create_engine('sqlite:///C:/Users/Path/to/Data/data_22/jan_dirty.db').connect()
 	ctx = alembic.migration.MigrationContext.configure(conn)
 	op = alembic.operations.Operations(ctx)
 	pd.Series(0.0, name='tweetoIDS').to_sql('tweetoIDS', con=conn, index=False)

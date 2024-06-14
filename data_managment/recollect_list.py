@@ -36,15 +36,15 @@ from nltk.corpus import stopwords
 warnings.filterwarnings("ignore")
 
 #original ids, then cleaned ids collect whats missing
-db_destination = create_engine('sqlite:///C:/Users/Dl0ck/OneDrive/Fall 2021/TwitterCarlson/data_22/processed/convo_ids.db').connect()
-#db_all = create_engine('sqlite:///C:/Users/Dl0ck/OneDrive/Fall 2021/TwitterCarlson/data_22/processed/clean_all.db').connect()
+db_destination = create_engine('sqlite:///C:/Users/Path/to/Data/data_22/processed/convo_ids.db').connect()
+#db_all = create_engine('sqlite:///C:/Users/Path/to/Data/data_22/processed/clean_all.db').connect()
 
 
 #grab original ids put into dataframe
 
 # adding column name to the respective columns
 #original_ids = pd.DataFrame(columns = ['orig_ids'])
-#original_ids['orig_ids'] = pd.read_fwf('C:/Users/Dl0ck/OneDrive/Fall 2021/TwitterCarlson/conversation_ids04-23-21.txt')
+#original_ids['orig_ids'] = pd.read_fwf('C:/Users/Path/to/Data/conversation_ids04-23-21.txt')
 #original_ids.to_sql('original_ids',con=db_destination, index=False, if_exists='append')
 
 #gram the completed ids put into dataframe
@@ -59,12 +59,12 @@ db_destination = create_engine('sqlite:///C:/Users/Dl0ck/OneDrive/Fall 2021/Twit
 #new_list.to_sql('recollection',con=db_destination,index=False, if_exists='append')
 
 
-#pd.read_sql(" SELECT o.orig_ids FROM 'original_ids' o WHERE NOT EXISTS (SELECT 1 FROM 'complete_ids' c WHERE c.done_ids =o.orig_ids)",con=db_destination).to_csv('C:/Users/Dl0ck/OneDrive/Fall 2021/TwitterCarlson/data_22/processed/conversation_ids03-22.txt', header=True, sep='\n', index=False, encoding='utf-8')
+#pd.read_sql(" SELECT o.orig_ids FROM 'original_ids' o WHERE NOT EXISTS (SELECT 1 FROM 'complete_ids' c WHERE c.done_ids =o.orig_ids)",con=db_destination).to_csv('C:/Users/Path/to/Data/data_22/processed/conversation_ids03-22.txt', header=True, sep='\n', index=False, encoding='utf-8')
 
 
 # = pd.read_sql("SELECT l.orig_ids FROM 'original_ids' l LEFT JOIN 'complete_ids' r ON r.done_ids = l.orig_ids WHERE r.done_ids IS NULL",con=db_destination)
 
-#.to_csv('C:/Users/Dl0ck/OneDrive/Fall 2021/TwitterCarlson/data_22/processed/conversation_ids03-22.txt', header=True, sep='\n', index=False, encoding='utf-8')
+#.to_csv('C:/Users/Path/to/Data/data_22/processed/conversation_ids03-22.txt', header=True, sep='\n', index=False, encoding='utf-8')
 
 
 
@@ -82,7 +82,7 @@ done = pd.read_sql("SELECT done_ids FROM 'complete_ids'",con=db_destination)
 done.done_ids = done.done_ids.astype(float)
 
 recollect = orig.orig_ids[~orig.orig_ids.isin(done.done_ids)]
-recollect.to_csv('C:/Users/Dl0ck/OneDrive/Fall 2021/TwitterCarlson/data_22/processed/conversation_ids03-22.txt', header=True, sep='\n', index=False, encoding='utf-8')
+recollect.to_csv('C:/Users/Path/to/Data/data_22/processed/conversation_ids03-22.txt', header=True, sep='\n', index=False, encoding='utf-8')
 
 
 

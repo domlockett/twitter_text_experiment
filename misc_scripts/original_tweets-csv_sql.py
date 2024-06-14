@@ -81,14 +81,14 @@ for file in range(0,3):
 
 cnx.close()
 
-cnx = create_engine('sqlite:///C:/Users/Dl0ck/OneDrive/Fall 2021/TwitterCarlson/data_22/jan_dirty.db').connect()
+cnx = create_engine('sqlite:///C:/Users/Path/to/Data/data_22/jan_dirty.db').connect()
 
 tweets1 = pd.read_sql_table('tweets', cnx )
 tweetsMedia1 = pd.read_sql_table('tweets-media', cnx)
 tweetsContext1 = pd.read_sql_table('tweets-context', cnx )
 cnx.close()
 
-cnx = create_engine('sqlite:///C:/Users/Dl0ck/OneDrive/Fall 2021/TwitterCarlson/data_22/jan_dirty.db').connect()
+cnx = create_engine('sqlite:///C:/Users/Path/to/Data/data_22/jan_dirty.db').connect()
 
 tweets = pd.read_sql_table('tweets-o', cnx )
 tweetsMedia = pd.read_sql_table('tweets-media-o', cnx)

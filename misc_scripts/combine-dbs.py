@@ -39,7 +39,7 @@ warnings.filterwarnings("ignore")
 
 
 
-proj = 'sqlite:///C:/Users/Dl0ck/OneDrive/Fall 2021/TwitterCarlson/data/'
+proj = 'sqlite:///C:/Users/Path/to/Data/data/'
 
 
 srcEngine = create_engine(proj + 'processed/tweets/clean_orig.db') # change this for your source database
@@ -60,7 +60,7 @@ destTable3 = Table('tweets-context-o', destEngine._metadata)
 
 
 
-# engine =  create_engine('sqlite:///C:/Users/Dl0ck/OneDrive/Fall 2021/TwitterCarlson/data/processed/comments/clean_comm_dl.db') # connection properties stored
+# engine =  create_engine('sqlite:///C:/Users/Path/to/Data/data/processed/comments/clean_comm_dl.db') # connection properties stored
 
 
 # metadata = MetaData() # stores the 'production' database's metadata
@@ -88,8 +88,8 @@ for column in srcTable3.columns:
 destTable3.create()
 
 
-cnx1 = create_engine('sqlite:///C:/Users/Dl0ck/OneDrive/Fall 2021/TwitterCarlson/data/processed/tweets/clean_orig.db').connect()
-cnx2 = create_engine('sqlite:///C:/Users/Dl0ck/OneDrive/Fall 2021/TwitterCarlson/data/processed/comments/clean_comm_dl.db').connect()
+cnx1 = create_engine('sqlite:///C:/Users/Path/to/Data/data/processed/tweets/clean_orig.db').connect()
+cnx2 = create_engine('sqlite:///C:/Users/Path/to/Data/data/processed/comments/clean_comm_dl.db').connect()
 
 
 

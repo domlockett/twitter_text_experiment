@@ -34,12 +34,12 @@ library(dplyr)
 library(DBI)
 
 #connect to the DATABASE BY feeding it the address 
-con <- dbConnect(RSQLite::SQLite(), 'C:/Users/dl0ck/OneDrive/Fall 2021/TwitterCarlson/data_22/processed/jan_clean.db') #all current
+con <- dbConnect(RSQLite::SQLite(), 'C:/Users/Path/to/Data/data_22/processed/jan_clean.db') #all current
 
 
 
 
-cnx <- dbConnect(RSQLite::SQLite(), 'C:/Users/dl0ck/OneDrive/Fall 2021/TwitterCarlson/data_22/processed/clean_orig.db') #all current
+cnx <- dbConnect(RSQLite::SQLite(), 'C:/Users/Path/to/Data/data_22/processed/clean_orig.db') #all current
 om <- dbReadTable(con, "tweets-media-o")
 # ot<- dbReadTable(cnx, "jan-o")
 # oc <- dbReadTable(cnx, "jan-context-o")
