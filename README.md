@@ -83,7 +83,7 @@ The [`scrape-newscomments-sql.py`](https://github.com/domlockett/twitter_text_ex
 
 
 ### Beta Analysis
-**Descriptions:**
+**Description:**
 The [`data_management/beta_analyses.r`](https://github.com/domlockett/twitter_text_experiment/blob/main/beta_analysis.py) file performs exploratory data analysis and initial hypothesis testing on the processed tweet data.
 
 **Content and Structure:**
