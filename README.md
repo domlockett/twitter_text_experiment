@@ -103,4 +103,4 @@ The [`data_management/beta_analyses.r`](https://github.com/domlockett/twitter_te
 
 
 ## Acknowledgement
-This project is a collaborative effort involving significant contributions from various scholars. The provided files and scripts reflect the extensive work done to understand and address the impacts of social media on public discourse. Created for academic purposes, any anonymized data has been removed to ensure privacy and confidentiality. Developed for Washington University in Saint Louis Political Science Department, as well as Exeter and Princeton University. Special thanks to all authors for agreeing to publicize my contributions to the project.
+This project is a collaborative effort involving significant contributions from various scholars. The provided files and scripts reflect the extensive work done to understand and address the impacts of social media on public discourse. Created for academic purposes, any anonymized data has been removed to ensure privacy and confidentiality. Developed for Washington University in Saint Louis Political Science Department. Special thanks to all authors for agreeing to publicize my contributions to the project.
