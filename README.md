@@ -2,10 +2,8 @@
 
 ## Overview
 
-The Twitter Text Experiment aims to collect and analyze tweets from approximately 30 news outlets, including all comments on these tweets. The goal is to build a comprehensive dataset to study the variation in social commentary compared to professional news outlets.
+The Twitter Text Experiment aims to collect and analyze tweets from approximately 30 news outlets, including all comments on these tweets. The goal is to build a comprehensive dataset to study the variation in social commentary accross professional news outlets.
 
-## Goals
-The primary goal of this project is to collect and analyze Twitter data from various news outlets and their associated comments. This analysis aims to compare social commentary with professional news content, providing observational data to complement previous experimental studies.
 
 ## Data
 
